@@ -1,0 +1,87 @@
+@import "./sizes.scss";
+
+.heroWrapper {
+  padding-top: 3rem;
+}
+
+.carouselWrapper {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+
+  @media only screen and (max-width: $sm) {
+    height: 58vh;
+    position: relative;
+  }
+
+  @media only screen and (min-width: $sm) {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.image {
+  left: 50%;
+  min-width: 320px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 26vw;
+
+  @media only screen and (max-width: $sm) {
+    min-width: auto;
+    width: 220px;
+  }
+}
+
+.headingWrapper {
+  bottom: 3rem;
+  color: #fff;
+  left: 3rem;
+  font-size: 1.225em;
+  font-weight: 800;
+  margin: 0 auto;
+  max-width: calc(415px - 2rem);
+  mix-blend-mode: difference;
+  position: absolute;
+  width: 100%;
+
+  @media only screen and (max-width: $sm) {
+    font-size: 1em;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+    position: static;
+  }
+}
+
+.descriptionWrapper {
+  bottom: 3rem;
+  color: #fff;
+  max-width: calc(415px - 1rem);
+  mix-blend-mode: difference;
+  text-align: right;
+  position: absolute;
+  right: 3rem;
+  width: 100%;
+
+  @media only screen and (max-width: $sm) {
+    text-align: center;
+    position: static;
+  }
+}
+
+.link {
+  color: #00CFD0;
+  isolation: isolate;
+  font-weight: bold;
+}
+
+.linkSpacer {
+  margin: 0 1rem;
+}
