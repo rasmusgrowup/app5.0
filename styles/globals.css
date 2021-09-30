@@ -1,4 +1,32 @@
 @font-face {
+  font-family: "Anderson";
+  src: url("../public/fonts/AndersonGrotesk.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anderson";
+  src: url("../public/fonts/AndersonGrotesk-Oblique.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Anderson";
+  src: url("../public/fonts/AndersonGrotesk-Ultrabold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anderson";
+  src: url("../public/fonts/AndersonGrotesk-UltraboldOblique.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
   font-family: "HKGrotesk";
   src: url("../public/fonts/HKGrotesk-Regular.woff2") format("woff2");
   src: url("../public/fonts/HKGrotesk-Regular.woff") format("woff");
@@ -48,9 +76,9 @@
 
 html,
 body {
-  background-color: white;
+  background-color: var(--main-bg);
   font-family:
-    'HKGrotesk',
+    var(--anderson),
     -apple-system,
     BlinkMacSystemFont,
     Segoe UI,
@@ -76,14 +104,17 @@ html {
   background-color: black;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1;
+  letter-spacing: -0.05em;
   margin: 0;
 }
 
 p {
   line-height: 1.5;
-  margin-top: 0;
+  font-family: var(--anderson);
 }
 
 a {
@@ -96,12 +127,18 @@ a {
 }
 
 :root {
+  --anderson: 'Anderson';
+  --garamond: 'EB Garamond', serif;
+  --grotesk: 'HKGrotesk';
   --main: #fd6c21;
   --main: #fd2121;
   --main: #ee1d52;
   --main-accent: #fd1c1b;
+  --main-bg: #faf6f0;
   --grey: #b2b2b2;
   --white: #fff;
+  --dark: #05090f;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* custom cursor - https://javascript.plainenglish.io/how-to-create-a-custom-css-pointer-in-react-2d4684215564 */
@@ -144,4 +181,17 @@ a {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+}
+
+.animWrapper {
+  display: block;
+  overflow: hidden;
+  margin-bottom: -0.1em;
+  padding-bottom: 0.1em;
+  position: relative;
+}
+
+.animInner {
+  display: block;
+  position: relative;
 }

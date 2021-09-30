@@ -8,7 +8,6 @@ export default function Layout({ children }) {
   return (
     <>
         <Meta />
-        <Title />
         <Navbar />
         <CustomView condition={!isMobile}>
         </CustomView>

@@ -1,3 +1,6 @@
+import arrow from '../public/arrow-up-right.svg'
+import css from '../styles/hero.module.scss'
+import anim from '../styles/anim.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import imageOne from '../public/_DSF2740.jpg'
@@ -5,12 +8,28 @@ import imageTwo from '../public/_DSF2770.jpg'
 import imageThree from '../public/_DSF2852.jpg'
 import imageFour from '../public/_DSF2761.jpg'
 import imageFive from '../public/_DSF2715.jpg'
-import css from '../styles/hero.module.scss'
+import imageSix from '../public/_DSF2746.jpg'
+import imageSeven from '../public/_DSF2772.jpg'
+import imageEight from '../public/_DSF2999.jpg'
+import imageNine from '../public/_DSF2998.jpg'
+import imageTen from '../public/_DSF2845.jpg'
 import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 export default function Title() {
   useEffect (() => {
+    gsap.set('.animInner', {
+      yPercent: 110,
+    })
+
+    gsap.to('.animInner', {
+      yPercent: 0,
+      delay: 1,
+      duration: 2,
+      ease: 'Power3.easeOut',
+      stagger: 0.1,
+    })
+
     gsap.set('.imageInner', {
       xPercent: 100,
       opacity: 0,
@@ -19,14 +38,14 @@ export default function Title() {
     gsap.to('.imageInner', {
       xPercent: 0,
       opacity: 1,
-      delay: 1,
-      duration: 2,
+      delay: 4,
+      duration: 3,
       ease: 'Power3.easeOut',
     })
 
     const STAGGER = .14
     const DURATION = 1
-    const OFFSET = 1 * STAGGER
+    const OFFSET = 0 * STAGGER
     const BOXES = gsap.utils.toArray('.image')
 
     const LOOP = gsap.timeline({
@@ -62,10 +81,10 @@ export default function Title() {
     },
     {
       totalTime: END_TIME,
-      duration: 75,
+      duration: 50,
       ease: 'none',
-      repeat: -1,
-      delay: 2
+      delay: 4,
+      repeat: -1
     })
   }, [])
 
@@ -75,24 +94,59 @@ export default function Title() {
 
         <div className={css.carouselWrapper}>
           <div className={`${css.image} image`}><Image src={imageOne} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageTwo} className='imageInner'  quality='100' layout='responsive'/></div>
           <div className={`${css.image} image`}><Image src={imageThree} className='imageInner' quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageFour} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageFive} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageOne} className='imageInner'  quality='100' layout='responsive'/></div>
           <div className={`${css.image} image`}><Image src={imageTwo} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageThree} className='imageInner'  quality='100' layout='responsive'/></div>
           <div className={`${css.image} image`}><Image src={imageFour} className='imageInner'  quality='100' layout='responsive'/></div>
           <div className={`${css.image} image`}><Image src={imageFive} className='imageInner'  quality='100' layout='responsive'/></div>
+          <div className={`${css.image} image`}><Image src={imageSix} className='imageInner'  quality='100' layout='responsive'/></div>
+          <div className={`${css.image} image`}><Image src={imageSeven} className='imageInner'  quality='100' layout='responsive'/></div>
+          <div className={`${css.image} image`}><Image src={imageEight} className='imageInner'  quality='100' layout='responsive'/></div>
+          <div className={`${css.image} image`}><Image src={imageNine} className='imageInner'  quality='100' layout='responsive'/></div>
+          <div className={`${css.image} image`}><Image src={imageTen} className='imageInner'  quality='100' layout='responsive'/></div>
         </div>
 
         <div className={css.textWrapper}>
-          <div className={css.headingWrapper}><h1>Odenseansk design, web & social content bureau.</h1></div>
+          <div className={css.headingWrapper}>
+            <h1>
+              <div className='animWrapper'><span className='animInner'>Odenseansk</span></div>
+              <div className='animWrapper'><span className='animInner'>design, web &</span></div>
+              <div className='animWrapper'><span className='animInner'>social media</span></div>
+              <div className='animWrapper'><span className='animInner'>bureau.</span></div>
+            </h1>
+          </div>
           <div className={css.descriptionWrapper}>
-            <p>All-in-one webshops og hjemmesider, med skræddersyet indhold og billeder, samt organisk indhold til jeres SoMe profiler.</p>
-            <Link href='tel:+453073048'><a className={css.link}>(+45) 30 70 30 48</a></Link>
-            <span className={css.linkSpacer}>|</span>
-            <Link href='mailto:hello@growupstudio.dk'><a className={css.link}>Skriv til os</a></Link>
+            <div className='animWrapper'>
+              <span className='animInner'>
+              <Link href='mailto:hello@growupstudio.dk'><a className={css.link}>hello@growupstudio.dk</a></Link>
+              </span>
+            </div>
+            <p>
+              <div className='animWrapper'><span className='animInner'>All-in-one webshops og hjemmesider, med</span></div>
+              <div className='animWrapper'><span className='animInner'>skræddersyet indhold og billeder, samt organisk</span></div>
+              <div className='animWrapper'><span className='animInner'>indhold til jeres SoMe profiler.</span></div>
+            </p>
+          </div>
+          <div className={css.SoMeLinks}>
+            <div className='animWrapper'>
+              <span className='animInner'>
+                <Link href='#'>
+                  <a className={css.SoMeLink}>
+                    <span>Instagram</span>
+                    <Image src={arrow} className={css.arrowUpRight}/>
+                  </a>
+                </Link>
+              </span>
+            </div>
+            <div className='animWrapper'>
+              <span className='animInner'>
+                <Link href='#'>
+                  <a className={css.SoMeLink}>
+                    <span>LinkedIn</span>
+                    <Image src={arrow} className={css.arrowUpRight}/>
+                  </a>
+                </Link>
+              </span>
+            </div>
           </div>
         </div>
 
