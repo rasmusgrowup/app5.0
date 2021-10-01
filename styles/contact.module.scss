@@ -15,6 +15,10 @@
 .titleWrapper {
   display: inline-block;
   position: absolute;
+
+  @media only screen and (max-width: $sm) {
+    position: relative;
+  }
 }
 
 .titleWrapper::after,
@@ -30,8 +34,13 @@
 
 .mailWrapper {
   display: inline-block;
-  font-size: 10vw;
+  font-size: 7vw;
   font-weight: bold;
+  margin-bottom: 4rem;
+
+  @media only screen and (max-width: $sm) {
+    font-size: 12vw;
+  }
 }
 
 .mailWrapper::after {
@@ -50,12 +59,35 @@
   margin-left: auto;
   vertical-align: top;
   width: 80%;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
 }
 
 .sellingPoint {
   color: var(--dark);
-  font-size: clamp(22px, 5vw, 2em);
+  font-size: clamp(18px, 4vw, 2em);
   font-weight: 800;
   margin: 0 auto 0 0;
   width: 70%;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.contactLinks {
+  margin-top: 4rem;
+}
+
+.contactLink {
+  align-items: flex-start;
+  display: flex;
+  font-size: 1.4em;
+  margin-bottom: 0.5rem;
+
+  span {
+    margin-right: 0.5rem;
+  }
 }

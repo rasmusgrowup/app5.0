@@ -109,8 +109,14 @@ h1,
 }
 
 .smallPrint {
-  font-size: 60%;
+  font-size: 50%;
   font-weight: normal;
+}
+
+@media only screen and (max-width: 415px) {
+  .smallPrint {
+    font-size: 16px;
+  }
 }
 
 p {
