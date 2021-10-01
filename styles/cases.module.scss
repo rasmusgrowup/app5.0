@@ -1,0 +1,127 @@
+@import "./sizes.scss";
+
+.casesWrapper {
+  min-height: 100vh;
+  padding: 1rem;
+
+  @media only screen and (min-width: $sm) {
+    padding: 3rem;
+  }
+}
+
+.casesTitle {
+  font-weight: normal;
+}
+
+.titleWrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.titleWrapper::after {
+  background-color: var(--dark);
+  bottom: 0;
+  content: '';
+  height: 1px;
+  right: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.casesContainer {
+  margin: 2rem auto;
+  max-width: 1240px;
+  width: 64vw;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.caseWrapper {
+  display: flex;
+  margin-top: 1rem;
+
+  @media only screen and (max-width: $sm) {
+    display: block;
+  }
+}
+
+.caseLink {
+  display: block;
+}
+
+.caseOne {
+  margin: 0 auto;
+  width: 80%;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.caseTwo {
+  margin-right: 1rem;
+  width: calc(60% - 0.5rem);
+
+  @media only screen and (max-width: $sm) {
+    margin-bottom: 1rem;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.caseThree {
+  width: calc(40% - 0.5rem);
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.caseFour {
+  margin: 0 auto;
+  width: 60%;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.caseFive {
+  margin-right: 1rem;
+  width: calc(45% - 1rem);
+
+  @media only screen and (max-width: $sm) {
+    margin-bottom: 1rem;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.caseSix {
+  width: 55%;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.caseSeven {
+  margin: 0 auto;
+  width: 60%;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.caseEight {
+  margin: 0 auto 0 0;
+  width: 55%;
+
+  @media only screen and (max-width: $sm) {
+    margin: 0 auto;
+    width: 100%;
+  }
+}

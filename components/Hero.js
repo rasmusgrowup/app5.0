@@ -16,7 +16,7 @@ import imageTen from '../public/_DSF2845.jpg'
 import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 
-export default function Title() {
+export default function Hero() {
   useEffect (() => {
     gsap.set('.animInner', {
       yPercent: 110,
@@ -25,7 +25,7 @@ export default function Title() {
     gsap.to('.animInner', {
       yPercent: 0,
       delay: 1,
-      duration: 2,
+      duration: 1.5,
       ease: 'Power3.easeOut',
       stagger: 0.1,
     })
@@ -38,8 +38,8 @@ export default function Title() {
     gsap.to('.imageInner', {
       xPercent: 0,
       opacity: 1,
-      delay: 4,
-      duration: 3,
+      delay: 3,
+      duration: 2,
       ease: 'Power3.easeOut',
     })
 
@@ -83,14 +83,14 @@ export default function Title() {
       totalTime: END_TIME,
       duration: 50,
       ease: 'none',
-      delay: 4,
+      delay: 3,
       repeat: -1
     })
   }, [])
 
   return(
     <>
-      <div className={css.heroWrapper}>
+      <section className={css.heroWrapper}>
 
         <div className={css.carouselWrapper}>
           <div className={`${css.image} image`}><Image src={imageOne} className='imageInner'  quality='100' layout='responsive'/></div>
@@ -115,15 +115,15 @@ export default function Title() {
             </h1>
           </div>
           <div className={css.descriptionWrapper}>
-            <div className='animWrapper'>
+            <div className={`${css.mailWrapper} animWrapper`}>
               <span className='animInner'>
               <Link href='mailto:hello@growupstudio.dk'><a className={css.link}>hello@growupstudio.dk</a></Link>
               </span>
             </div>
             <p>
               <div className='animWrapper'><span className='animInner'>All-in-one webshops og hjemmesider, med</span></div>
-              <div className='animWrapper'><span className='animInner'>skræddersyet indhold og billeder, samt organisk</span></div>
-              <div className='animWrapper'><span className='animInner'>indhold til jeres SoMe profiler.</span></div>
+              <div className='animWrapper'><span className='animInner'>skræddersyet indhold og billeder, samt </span></div>
+              <div className='animWrapper'><span className='animInner'>organisk indhold til jeres SoMe profiler.</span></div>
             </p>
           </div>
           <div className={css.SoMeLinks}>
@@ -150,7 +150,7 @@ export default function Title() {
           </div>
         </div>
 
-      </div>
+      </section>
     </>
   )
 }
