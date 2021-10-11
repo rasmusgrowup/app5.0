@@ -14,7 +14,7 @@ export default function Footer() {
             Alle rettigheder haves <Image src={Copyright} width='9' height='9'/> {new Date().getFullYear()}
           </p>
           <p>Growup Ivs</p>
-          <p>CVR 39852640</p>
+          <p className={css.cvr}>CVR 39852640</p>
         </div>
       </footer>
     </>

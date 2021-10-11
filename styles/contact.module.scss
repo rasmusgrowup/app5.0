@@ -9,7 +9,8 @@
 }
 
 .contactTitle {
-  font-weight: normal;
+  font-weight: 500;
+  font-size: 0.75em;
 }
 
 .titleWrapper {
@@ -34,12 +35,13 @@
 
 .mailWrapper {
   display: inline-block;
-  font-size: 7vw;
+  font-size: 9vw;
   font-weight: bold;
   margin-bottom: 4rem;
 
   @media only screen and (max-width: $sm) {
     font-size: 12vw;
+    margin-bottom: 1rem;
   }
 }
 
@@ -58,7 +60,7 @@
   margin-right: 0;
   margin-left: auto;
   vertical-align: top;
-  width: 80%;
+  width: 85%;
 
   @media only screen and (max-width: $sm) {
     width: 100%;
@@ -67,27 +69,43 @@
 
 .sellingPoint {
   color: var(--dark);
-  font-size: clamp(18px, 4vw, 2em);
+  font-size: clamp(18px, 3vw, 2em);
   font-weight: 800;
   margin: 0 auto 0 0;
-  width: 70%;
+  width: 75%;
 
   @media only screen and (max-width: $sm) {
     width: 100%;
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin: 0;
   }
 }
 
 .contactLinks {
   margin-top: 4rem;
+
+  @media only screen and (max-width: $sm) {
+    margin-top: 1rem;
+  }
 }
 
 .contactLink {
   align-items: flex-start;
   display: flex;
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin-bottom: 0.5rem;
 
   span {
     margin-right: 0.5rem;
+  }
+
+  &:hover {
+    color: var(--main-accent);
   }
 }

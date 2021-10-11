@@ -3,26 +3,29 @@ import css from '../styles/hero.module.scss'
 import anim from '../styles/anim.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
-import imageOne from '../public/_DSF2740.jpg'
-import imageTwo from '../public/_DSF2770.jpg'
+import imageOne from '../public/IMG_0348.jpg'
+import imageTwo from '../public/IMG_0369.jpg'
 import imageThree from '../public/_DSF2852.jpg'
-import imageFour from '../public/_DSF2761.jpg'
-import imageFive from '../public/_DSF2715.jpg'
-import imageSix from '../public/_DSF2746.jpg'
+import imageFour from '../public/_DSF2571.jpg'
+import imageFive from '../public/_DSF2639.jpg'
+import imageSix from '../public/IMG_0364.jpg'
 import imageSeven from '../public/_DSF2772.jpg'
 import imageEight from '../public/_DSF2999.jpg'
-import imageNine from '../public/_DSF2998.jpg'
-import imageTen from '../public/_DSF2845.jpg'
-import React, { useState, useEffect } from 'react';
+import imageNine from '../public/IMG_0362.jpg'
+import imageTen from '../public/IMG_0350.jpg'
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 
 export default function Hero() {
+  const el = useRef();
+  const q = gsap.utils.selector(el);
+
   useEffect (() => {
-    gsap.set('.animInner', {
+    gsap.set(q('.animInner'), {
       yPercent: 110,
     })
 
-    gsap.to('.animInner', {
+    gsap.to(q('.animInner'), {
       yPercent: 0,
       delay: 1,
       duration: 1.5,
@@ -91,21 +94,51 @@ export default function Hero() {
   return(
     <>
       <section className={css.heroWrapper}>
-
         <div className={css.carouselWrapper}>
-          <div className={`${css.image} image`}><Image src={imageOne} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageThree} className='imageInner' quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageTwo} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageFour} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageFive} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageSix} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageSeven} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageEight} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageNine} className='imageInner'  quality='100' layout='responsive'/></div>
-          <div className={`${css.image} image`}><Image src={imageTen} className='imageInner'  quality='100' layout='responsive'/></div>
+          <div className={css.logoTitle}>Growup</div>
+          <div className={`${css.image} image`}>
+            <Image src={imageOne} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@theorganiccrave</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageThree} className='imageInner' quality='100' layout='responsive'/>
+            <caption>@growupstudio.dk</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageTwo} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@kristinesto, @hallojstoj</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageSix} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@growupstudio.dk, @kristinesto</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageFour} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@kristinesto, @hallojstoj</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageFive}  className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@theorganiccrave</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageSeven} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@kristinesto, @hallojstoj</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageEight} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@theorganiccrave</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageNine} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@theorganiccrave</caption>
+          </div>
+          <div className={`${css.image} image`}>
+            <Image src={imageTen} className='imageInner'  quality='100' layout='responsive'/>
+            <caption>@kristinesto, @hallojstoj</caption>
+          </div>
         </div>
 
-        <div className={css.textWrapper}>
+        <div className={css.textWrapper} ref={el}>
           <div className={css.headingWrapper}>
             <h1>
               <div className='animWrapper'><span className='animInner'>Odenseansk</span></div>
@@ -121,11 +154,12 @@ export default function Hero() {
               </span>
             </div>
             <p>
-              <div className='animWrapper'><span className='animInner'>All-in-one webshops og hjemmesider, med</span></div>
-              <div className='animWrapper'><span className='animInner'>skræddersyet indhold og billeder, samt </span></div>
+              <div className='animWrapper'><span className='animInner'>Vi leverer all-in-one webshops og hjemmesider,</span></div>
+              <div className='animWrapper'><span className='animInner'> med skræddersyet indhold og billeder, samt</span></div>
               <div className='animWrapper'><span className='animInner'>organisk indhold til jeres SoMe profiler.</span></div>
             </p>
           </div>
+
           <div className={css.SoMeLinks}>
             <div className='animWrapper'>
               <span className='animInner'>

@@ -1,0 +1,79 @@
+@import "./sizes.scss";
+
+.aboutUsWrapper {
+  padding: 1rem;
+
+  @media only screen and (min-width: $sm) {
+    padding: 3rem;
+  }
+}
+
+.aboutUsTitle {
+  font-weight: 500;
+  font-size: 0.75em;
+}
+
+.titleWrapper {
+  display: inline-block;
+  position: absolute;
+
+  @media only screen and (max-width: $sm) {
+    position: relative;
+  }
+}
+
+.titleWrapper::after {
+  background-color: var(--dark);
+  bottom: 0;
+  content: '';
+  height: 1px;
+  right: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.aboutWrapper {
+  display: block;
+  margin: 0 auto 0;
+  vertical-align: top;
+  width: 70%;
+
+  @media only screen and (max-width: $sm) {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.preTitle {
+  display: none;
+  overflow: hidden;
+}
+
+.sellingPoint {
+  color: var(--dark);
+  font-size: clamp(26px, 4vw, 4em);
+  font-weight: 800;
+  margin: 0 auto 0 0;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.bodyText {
+  font-size: 1.1em;
+  margin-left: auto;
+  width: 415px;
+
+  @media only screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.bodyText p small {
+  display: block;
+}
+
+.imageOneWrapper {
+  display: inline-flex;
+}

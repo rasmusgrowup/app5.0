@@ -12,9 +12,10 @@
   overflow: hidden;
   position: absolute;
   width: 100%;
+  z-index: 1;
 
   @media only screen and (max-width: $sm) {
-    height: 92vh;
+    height: 100vh;
   }
 
   @media only screen and (min-width: $sm) {
@@ -24,31 +25,57 @@
   }
 }
 
+.textWrapper {
+  height: 100%;
+  position: relative;
+}
+
+.logoTitle {
+  display: none;
+  font-size: 4em;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .image {
   left: 50%;
   max-width: 600px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none;
   width: 20vw;
 
   @media only screen and (max-width: $sm) {
     min-width: auto;
-    width: 255px;
+    top: 47%;
+    width: 225px;
+  }
+
+  div {
+    pointer-events: none;
+  }
+
+  caption {
+    color: var(--lightDark);
+    display: block;
+    display: none;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: left;
   }
 }
 
 .headingWrapper {
-  color: var(--white);
+  color: var(--dark);
   left: 3rem;
   font-size: clamp(22px, 7vw, 5vh);
   font-weight: 800;
   margin: 0 auto;
-  mix-blend-mode: difference;
   position: absolute;
   top: 3rem;
-  z-index: 1;
 
   @media only screen and (max-width: $sm) {
     top: 1rem;
@@ -58,23 +85,50 @@
 
 .descriptionWrapper {
   bottom: 3rem;
-  color: var(--white);
-  max-width: calc(415px - 2rem);
-  mix-blend-mode: difference;
+  color: var(--dark);
+  max-width: calc(440px - 2rem);
   text-align: right;
   position: absolute;
   right: 3rem;
   z-index: 1;
 
   @media only screen and (max-width: $sm) {
+    bottom: 3rem;
     left: 1rem;
-    top: 36rem;
     text-align: left;
   }
 
   p {
+    font-size: 0.9em;
     margin-bottom: 0;
   }
+}
+
+.link {
+  display: initial;
+  font-size: 1.5em;
+  isolation: isolate;
+  position: relative;
+}
+
+.link::after {
+  background-color: var(--dark);
+  bottom: 0;
+  content: '';
+  height: 1px;
+  right: 0;
+  position: absolute;
+  transition: width 0.6s var(--ease);
+  width: 100%;
+}
+
+.link:hover {
+  color: var(--main-accent);
+}
+
+.link:hover::after {
+  transition: width 0.6s var(--ease);
+  width: 0;
 }
 
 .SoMeLinks {
@@ -99,29 +153,7 @@
   }
 }
 
-.SoMeLinks:hover {
+.SoMeLink:hover {
+  color: var(--main-accent);
   cursor: pointer;
-}
-
-.link {
-  display: initial;
-  font-size: 1.75em;
-  isolation: isolate;
-  position: relative;
-}
-
-.mailWrapper::after {
-  background-color: var(--white);
-  bottom: 0;
-  content: '';
-  height: 1px;
-  right: 0;
-  position: absolute;
-  transition: width 0.6s var(--ease);
-  width: 100%;
-}
-
-.mailWrapper:hover::after {
-  transition: width 0.6s var(--ease);
-  width: 0;
 }

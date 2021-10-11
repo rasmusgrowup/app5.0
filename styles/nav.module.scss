@@ -36,45 +36,28 @@
   }
 
   .navList {
-    display: none;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    @media only screen and (min-width: $m) {
-      //display: inline-block;
+    @media only screen and (max-width: $m) {
+      display: none;
     }
   }
 
   .listItem {
-    color: var(--main-accent);
+    color: var(--dark);
     display: inline-block;
     margin-right: 2rem;
-    transition: color 0.6s;
-  }
+    overflow: hidden;
 
-  .listItem::after {
-    background-color: var(--white);
-    content: '';
-    display: block;
-    height: 2px;
-    transition: width 0.3s;
-    width: 0%;
+    .listItemLink {
+      display: block;
+    }
   }
 
   .listItem:hover {
-    &::after {
-      background-color: var(--main-accent);
-      content: '';
-      display: block;
-      height: 2px;
-      transition: width 0.3s;
-      width: 100%;
-    }
-
-    .active {
-      font-weight: 700;
-    }
+    color: var(--main-accent);
   }
 
   .menuBtn {
@@ -95,24 +78,52 @@
 }
 
 .menuDrawer {
-  background-color: var(--main-accent);
-  color: var(--white);
-  content: '';
+  background-color: var(--white);
+  bottom: 0;
   display: block;
   height: 100%;
-  max-width: 380px;
   position: fixed;
   right: 0;
   top: 0;
-  transform: translateX(100%);
   width: 100vw;
   z-index: 1;
 
   .drawerContent {
-    left: 1rem;
-    position: absolute;
-    top: 6rem;
-    width: calc(100% - 2rem);
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    @media only screen and (max-width: $sm) {
+      display: block;
+    }
+  }
+
+  .drawerContentLeft {
+    background-color: var(--white);
+    color: var(--main-accent);
+    height: 100%;
+    flex: 50%;
+    padding: 3rem;
+    position: relative;
+
+    @media only screen and (max-width: $sm) {
+      height: auto;
+      padding: 2rem 1.5rem 0;
+    }
+  }
+
+  .drawerContentRight {
+    background-color: var(--white);
+    color: var(--main-accent);
+    height: 100%;
+    flex: 50%;
+    padding: 3rem;
+    position: relative;
+
+    @media only screen and (max-width: $sm) {
+      height: auto;
+      padding: 2rem 1.5rem;
+    }
   }
 
   .menuList {
@@ -124,26 +135,78 @@
 
   .menuListItem {
     display: flex;
-    font-size: 4em;
+    font-size: 7em;
     font-weight: 900;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.025em;
+    line-height: 1;
+
+    @media only screen and (max-width: $sm) {
+      font-size: 2.5em;
+    }
+  }
+
+  .contactLinks {
+    bottom: 3rem;
+    left: 3rem;
+    font-size: 1.25rem;
+    position: absolute;
+
+    .contactLink {
+      display: inline-block;
+    }
+
+    .lineSpacer {
+      margin: 0 1rem;
+    }
+
+    @media only screen and (max-width: $sm) {
+      position: static;
+    }
   }
 
   .secList {
-    font-size: 1.5em;
+    font-size: 2em;
+    font-weight: normal;
     line-height: 1.5;
     list-style: none;
     margin: 0;
-    margin-top: 3rem;
     padding: 0;
 
     li {
       display: flex;
     }
+
+    @media only screen and (max-width: $sm) {
+      font-size: 1.25em;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .SoMeLinks {
+    bottom: 3rem;
+    color: var(--main-accent);
+    font-size: 1.5em;
+    left: 3rem;
+    position: absolute;
+    z-index: 1;
+
+    @media only screen and (max-width: $sm) {
+      position: static;
+      font-size: 1.25em;
+    }
+  }
+
+  .SoMeLink {
+    align-items: flex-start;
+    display: flex;
+
+    span {
+      margin-right: 0.25rem;
+    }
   }
 
   .secList a::after {
-    background-color: var(--white);
+    background-color: var(--main-accent);
     content: '';
     display: block;
     height: 3px;
@@ -152,7 +215,7 @@
   }
 
   .menuListItem a::after {
-    background-color: var(--white);
+    background-color: var(--main-accent);
     content: '';
     display: block;
     height: 6px;
@@ -161,7 +224,7 @@
   }
 
   .menuListItem a:hover::after {
-    background-color: var(--white);
+    background-color: var(--main-accent);
     content: '';
     display: block;
     height: 6px;
@@ -171,24 +234,13 @@
 
   .secList a:hover {
     &::after {
-      background-color: var(--white);
+      background-color: var(--main-accent);
       content: '';
       display: block;
       height: 3px;
       transition: width 0.3s;
       width: 100%;
     }
-  }
-
-  .blogList {
-    border-top: 1px solid var(--white);
-    font-size: 1.1em;
-    font-weight: 400;
-    line-height: 1.5;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    padding-top: 3rem;
   }
 }
 

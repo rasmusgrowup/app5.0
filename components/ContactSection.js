@@ -2,37 +2,41 @@ import css from '../styles/contact.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import arrow from '../public/arrow-up-right.svg'
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export default function ContactSection() {
+  const title = useRef();
+  const el = useRef();
+  const q = gsap.utils.selector(el);
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect (() => {
-    gsap.set('.contactInner', {
+    gsap.set(q('.contactInner'), {
       yPercent: 120
     })
 
-    var contactScrollIn = gsap.utils.toArray('.contactInner');
-    contactScrollIn.forEach((contactScrollIn) => {
-      gsap.to(contactScrollIn, {
-      duration: 1.5,
-      yPercent: 0,
-        scrollTrigger: {
-          trigger: contactScrollIn,
-          start: "top bottom",
-        }
-      });
-    });
+    ScrollTrigger.create({
+      trigger: title.current,
+      start: 'top bottom',
+      onEnter: () => {
+        gsap.to(q('.contactInner'), {
+          yPercent: 0,
+          duration: 1.5,
+          ease: 'Power3.easeOut',
+          stagger: 0.1
+        })
+      }
+    })
   }, [])
 
   return(
     <>
-      <section className={css.contactSectionWrapper}>
+      <section className={css.contactSectionWrapper} ref={el}>
 
       <h2 className={css.titleWrapper}>
-        <div className={`${css.contactTitle} contactWrapper`}><span className='contactInner'>Kontakt</span></div>
+        <div className={`${css.contactTitle} contactWrapper`}><span className='contactInner' ref={title}>Kontakt</span></div>
       </h2>
 
       <div className={css.contactInfoWrapper}>
@@ -46,10 +50,12 @@ export default function ContactSection() {
           <h3 className='bigPrint'>
             <div className='contactWrapper'><span className='contactInner'>All-in-one webshops og hjemmesider,</span></div>
             <div className='contactWrapper'><span className='contactInner'>med skræddersyet indhold og billeder, </span></div>
-            <div className='contactWrapper'><span className='contactInner'>samt organisk indhold til jeres SoMe profiler.</span></div>
+            <div className='contactWrapper'><span className='contactInner'>samt organisk indhold til jeres SoMe</span></div>
+            <div className='contactWrapper'><span className='contactInner'>profiler.</span></div>
           </h3>
           <div className='contactWrapper'>
-          <p className='smallPrint contactInner'>All-in-one webshops og hjemmesider, med skræddersyet indhold og billeder, samt organisk indhold til jeres SoMe profiler.</p>
+            <p className='smallPrint contactInner'>All-in-one webshops og hjemmesider, med skræddersyet indhold og billeder</p>
+            <p className='smallPrint contactInner'>samt organisk indhold til jeres SoMe profiler.</p>
           </div>
         </div>
 

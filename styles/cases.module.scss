@@ -10,7 +10,8 @@
 }
 
 .casesTitle {
-  font-weight: normal;
+  font-weight: 500;
+  font-size: 0.7em;
 }
 
 .titleWrapper {
@@ -34,6 +35,7 @@
   width: 64vw;
 
   @media only screen and (max-width: $sm) {
+    margin: 0 auto;
     width: 100%;
   }
 }
@@ -49,6 +51,99 @@
 
 .caseLink {
   display: block;
+  position: relative;
+}
+
+@media only screen and (max-width: $sm) {
+  .readMore {
+    display: none;
+  }
+
+  .caseCaption {
+    background: rgb(5, 9, 15);
+    background: linear-gradient(0deg, rgba(5, 9, 15, 0.5) 0%, rgba(5, 9, 15, 0) 100%);
+    bottom: 0;
+    color: white;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
+    width: 100%;
+
+    p {
+      margin: 0;
+
+      strong {
+        display: block;
+      }
+    }
+
+    span {
+      margin-right: 0.25rem;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) {
+  .caseCaption {
+    bottom: 0;
+    color: var(--dark);
+    display: block;
+    font-size: 0.9em;
+    padding-right: 1rem;
+    position: absolute;
+    text-align: left;
+    transition: transform 0.75s var(--ease);
+    width: 100%;
+    z-index: -1;
+
+    .caseCaptionInner span {
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .readMore {
+    display: block;
+    color: var(--white);
+    left: 50%;
+    font-size: 2.75em;
+    font-style: italic;
+    font-weight: bold;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    .readMoreInner {
+      display: block;
+      transform: translateY(100%);
+      transition: transform 1s 0.3s var(--ease);
+      text-shadow: 0 0 24px rgb(5, 9, 15, 0.1);
+      position: relative;
+    }
+  }
+
+  .caseLink {
+    transition: margin-bottom 0.75s var(--ease);
+  }
+
+  .caseLink:hover .readMoreInner {
+    transform: translateY(0);
+    transition: transform 1s 0.3s var(--ease);
+  }
+
+  .caseLink:hover .caseCaption {
+    transform: translateY(80%);
+    transition: transform 0.75s 0.1s var(--ease);
+  }
+
+  .caseLink:hover {
+    margin-bottom: 2rem;
+    transition: margin-bottom 0.75s var(--ease);
+  }
 }
 
 .caseOne {
