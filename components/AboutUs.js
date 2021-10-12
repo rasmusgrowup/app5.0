@@ -48,13 +48,13 @@ export default function AboutUs() {
             <div className='aboutUsWrapper'><span className='aboutUsInner'>Vi hjælper selvstændige,</span></div>
             <div className='aboutUsWrapper'><span className='aboutUsInner'>start-ups og etablerede</span></div>
             <div className='aboutUsWrapper'><span className='aboutUsInner'>virksomheder med deres</span></div>
-            <div className='aboutUsWrapper'><span className='aboutUsInner'>hjemmesider og social</span></div>
+            <div className='aboutUsWrapper'><span className='aboutUsInner'>hjemmesider og sociale</span></div>
             <div className='aboutUsWrapper'><span className='aboutUsInner'>medier.</span></div>
           </h3>
         </div>
         <div className={css.bodyText}>
           <p className='aboutUsWrapper'>
-          Growup eksisterer for at hjælpe små og mellemstore virksomheder med at nå ud til nye kunder gennem smukke og funktionelle hjemmesider og god historiefortælling på de sociale medier. Vi tager jeres udfordringer og bekymringer seriøst, og guider jer gennem de mange muligheder, der eksisterer i den digitaliserede verden.
+          Growup eksisterer for at hjælpe små og mellemstore virksomheder med at nå ud til nye kunder, gennem smukke og funktionelle hjemmesider og god historiefortælling på de sociale medier. Vi tager jeres udfordringer og bekymringer seriøst, og hjælper jer med at vælge de bedste digitale løsninger, som både er moderne og fremtidssikrede.
           </p>
         </div>
       </div>
